@@ -1,0 +1,17 @@
+.things {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 160px;
+
+  @include respond(tablet) {
+    margin-bottom: 140px;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 100px;
+  }
+
+  .thing:last-child {
+    margin-top: 70px;
+  }
+}

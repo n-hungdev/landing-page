@@ -1,0 +1,125 @@
+.banner {
+  position: relative;
+
+  margin-top: 150px;
+  margin-bottom: 130px;
+
+  @include respond(tablet) {
+    margin-bottom: 150px;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 130px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__left > *:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  &__title {
+    font-size: 5.2rem;
+
+    text-transform: capitalize;
+
+    @include respond(mobile) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    line-height: 1.7;
+
+    color: $primary-grey-color;
+
+    @include respond(mobile) {
+      text-align: center;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    @include respond(mobile) {
+      justify-content: center;
+    }
+  }
+
+  &__btns .primary-btn:first-child {
+    margin-right: 20px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tablet) {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    @include respond(phone) {
+      width: 250px;
+    }
+  }
+
+  &__img img {
+    object-fit: contain;
+  }
+
+  &__virus-wrapper {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__virus-wrapper:nth-of-type(2) {
+    left: 40%;
+    top: 10px;
+  }
+
+  &__virus-wrapper:nth-of-type(3) {
+    bottom: -30px;
+    right: -60px;
+  }
+
+  &__virus {
+    background-repeat: no-repeat;
+
+    animation: infinite-rotate 30s linear infinite;
+  }
+
+  &__virus--red {
+    width: 135px;
+    height: 135px;
+
+    background-image: url(../images/virus-red.png);
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &__virus--blue {
+    width: 175px;
+    height: 170px;
+
+    background-image: url(../images/virus-blue.png);
+
+    animation-delay: 0.3s;
+    animation-duration: 35s;
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+}

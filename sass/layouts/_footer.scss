@@ -1,0 +1,89 @@
+.footer {
+  padding: 30px 0;
+  background-color: $footer-background-color;
+
+  &__logo {
+    width: 130px;
+
+    @include respond(mobile) {
+      width: 100px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+
+    @include respond(phone) {
+      text-align: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__items > *:not(:first-child) {
+    margin-left: 20px;
+
+    @include respond(phone) {
+      margin-left: 0;
+    }
+  }
+
+  &__items :is(:nth-child(3), :nth-child(4)) {
+    @include respond(phone) {
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    padding: 0 5px;
+
+    @include respond(mobile) {
+      flex: 0 0 50%;
+      width: 50%;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__item > a {
+    color: $primary-white-color;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+
+    & > *:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  &__contact {
+    font-size: 2rem;
+    padding: 0 5px;
+
+    color: $primary-white-color;
+
+    transition: all 0.25s ease;
+
+    @include respond(mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__copyright {
+    position: relative;
+
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 30px;
+    color: $primary-white-color;
+
+    @include respond(mobile) {
+      padding-top: 20px;
+      font-size: 1.1rem;
+    }
+  }
+}

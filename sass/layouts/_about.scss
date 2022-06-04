@@ -1,0 +1,38 @@
+.about {
+  margin-bottom: 100px;
+
+  &__left {
+    @include respond(tablet) {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    @include respond(phone) {
+      width: 280px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 50px;
+
+    @include respond(mobile) {
+      padding-left: 0;
+    }
+  }
+
+  &__right > *:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  &__right &__btn {
+    align-self: flex-start;
+
+    @include respond(mobile) {
+      align-self: center;
+    }
+  }
+}

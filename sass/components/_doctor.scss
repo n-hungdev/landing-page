@@ -1,0 +1,129 @@
+.doctor {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 40px 110px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 20px 20px 12px;
+  overflow: hidden;
+  height: 100%;
+
+  background-color: $doctor-background-color;
+
+  cursor: pointer;
+
+  @include respond(tablet) {
+    padding-top: 20px;
+  }
+
+  @include respond(phone) {
+    padding-top: 30px;
+  }
+
+  &__img {
+    width: 150px;
+  }
+
+  &__desc {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    height: 30%;
+    width: 100%;
+    padding: 35px 0 30px;
+
+    background-color: $primary-white-color;
+
+    transition: all 0.3s;
+
+    @include respond(mobile) {
+      padding-top: 15px;
+
+      background-color: $primary-red-color;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover &__desc {
+      padding-top: 30px;
+      height: 35%;
+
+      background-color: $primary-red-color;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+
+    transition: all 0.28s ease-out;
+
+    @include respond(mobile) {
+      font-size: 1.6rem;
+
+      color: $primary-white-color;
+    }
+  }
+
+  &__role {
+    font-size: 1.4rem;
+
+    color: $primary-grey-color;
+
+    transition: all 0.28s ease-out;
+
+    @include respond(mobile) {
+      color: $primary-white-color;
+
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover :is(&__name, &__role, &__contact) {
+      color: $primary-white-color;
+    }
+  }
+
+  &__contacts {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+
+    width: 100%;
+    text-align: center;
+
+    @include respond(mobile) {
+      bottom: 7px;
+    }
+  }
+
+  &__contact {
+    display: inline-block;
+    font-size: 2.2rem;
+    padding: 0 5px;
+    opacity: 0;
+
+    color: $primary-white-color;
+
+    transition: all 0.25s ease-out;
+
+    @include respond(mobile) {
+      font-size: 1.8rem;
+      opacity: 1;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover &__contact {
+      opacity: 1;
+
+      transform: translateY(-10px);
+    }
+  }
+}
